@@ -15,14 +15,14 @@ def api_response(api_endpoint: str, parameters: list):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    api_key = os.getenv("WEATHER_API_KEY") # our weather API key
+    api_key = os.environ.get("WEATHER_API_KEY") # our weather API key
     # step 1: read in the city whose weather we need
     city = input("City: ") # city (e.g. San Francisco)
     # we'll figure out state and country stuff later: states are for US only, countries need ISO 3166 codes
     # step 2: get latitude/longitude of the city with OpenWeather's Geocoding API, OpenWeather's weather data API endpoint needs those
     latitude_longitude_endpoint = f"http://api.openweathermap.org/geo/1.0/direct?q={city}&appid={api_key}"
     latitude_longitude_response = requests.get(latitude_longitude_endpoint) # response data for the given city, has the city's latitude/longitude coordinates
-    print(latitude_longitude_response.text)
+    print(latitude_longitude_response.json())
     # step 3: query the API with the city/state/country/latitude/longitude info
     pass
 
