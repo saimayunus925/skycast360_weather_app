@@ -22,7 +22,7 @@ if __name__ == '__main__':
     # step 2: get latitude/longitude of the city with OpenWeather's Geocoding API, OpenWeather's weather data API endpoint needs those
     latitude_longitude_endpoint = f"http://api.openweathermap.org/geo/1.0/direct?q={city}&appid={api_key}"
     latitude_longitude_response = requests.get(latitude_longitude_endpoint) # response data for the given city, has the city's latitude/longitude coordinates
-    print(latitude_longitude_response.text)
+    print(latitude_longitude_response.json())
     # step 3: query the API with the city/state/country/latitude/longitude info
     pass
 
