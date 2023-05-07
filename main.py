@@ -15,7 +15,7 @@ def api_response(api_endpoint: str, parameters: list):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    api_key = os.environ.get("WEATHER_API_KEY") # our weather API key
+    api_key = os.environ.get("API_KEY") # our weather API key
     # step 1: read in the city whose weather we need
     city = input("City: ") # city (e.g. San Francisco)
     # we'll figure out state and country stuff later: states are for US only, countries need ISO 3166 codes
