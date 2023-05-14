@@ -24,6 +24,6 @@ if __name__ == '__main__':
     latitude_longitude_response = requests.get(latitude_longitude_endpoint) # response data for the given city, has the city's latitude/longitude coordinates
     print(latitude_longitude_response.json())
     # step 3: query the API with the city/state/country/latitude/longitude info
-    pass
+    # pass
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
